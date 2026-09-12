@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Understanding MCAS — symptoms, triggers, and why it's hard to diagnose</title>
+<meta name="description" content="A plain-language guide to Mast Cell Activation Syndrome: what it is, common symptoms and triggers, and why diagnosis is often such a long road." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#17121B; --bg-deep:#100D14; --paper:#FBF7F2;
+    --ink:#F7F0EA; --ink-soft:#B9AAB3; --ink-faint:#8A7B84; --ink-dark:#2A2029;
+    --rule:rgba(247,240,234,0.10);
+    --accent:#C05A8A; --accent-deep:#7C4A66;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--bg); color:var(--ink); font-family:'Nunito',-apple-system,BlinkMacSystemFont,sans-serif; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,.serif{ font-family:'Lora', Georgia, serif; margin:0; letter-spacing:-0.01em; }
+  p{ margin:0; }
+  a{ color:inherit; }
+  :focus-visible{ outline:2px solid var(--ink); outline-offset:3px; border-radius:4px; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 32px; }
+
+  header{ position:sticky; top:0; z-index:20; background:rgba(23,18,27,0.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--rule); }
+  header .inner{ max-width:760px; margin:0 auto; padding:0 32px; display:flex; align-items:center; justify-content:space-between; height:68px; }
+  .wordmark{ font-family:'Lora',serif; font-weight:600; font-size:17px; text-decoration:none; color:var(--ink); }
+  .hdr-cta{ background:var(--accent); color:#fff; padding:9px 16px; border-radius:6px; font-weight:700; font-size:13px; text-decoration:none; }
+
+  .hero{ padding:80px 0 56px; }
+  .eyebrow{ font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); margin-bottom:16px; }
+  .hero h1{ font-size:clamp(30px,4.4vw,42px); line-height:1.15; margin-bottom:22px; max-width:16ch; }
+  .hero p{ font-size:16.5px; line-height:1.8; color:var(--ink-soft); max-width:62ch; }
+
+  section.body-section{ padding:52px 0; border-top:1px solid var(--rule); }
+  section.body-section h2{ font-size:24px; margin-bottom:20px; }
+  section.body-section p{ font-size:15.5px; line-height:1.85; color:var(--ink-soft); margin-bottom:16px; max-width:64ch; }
+  section.body-section p:last-child{ margin-bottom:0; }
+
+  .symptom-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px 32px; margin-top:8px; }
+  @media (max-width:600px){ .symptom-grid{ grid-template-columns:1fr; } }
+  .symptom-item{ border-left:2px solid var(--rule); padding-left:16px; }
+  .symptom-item h3{ font-family:'Nunito'; font-size:15px; font-weight:700; margin-bottom:6px; color:var(--ink); }
+  .symptom-item p{ font-size:14px; color:var(--ink-faint); line-height:1.65; margin:0; }
+
+  .trigger-list{ display:flex; flex-wrap:wrap; gap:10px; margin-top:8px; }
+  .trigger-list span{ border:1px solid var(--rule); border-radius:6px; padding:8px 14px; font-size:13.5px; color:var(--ink-soft); }
+
+  .callout{ background:var(--paper); color:var(--ink-dark); border-radius:14px; padding:32px clamp(20px,4vw,40px); margin-top:8px; }
+  .callout p{ color:#4A3E44; font-size:14.5px; }
+
+  .cta-band{ padding:72px 0 88px; border-top:1px solid var(--rule); text-align:center; }
+  .cta-band h2{ font-size:clamp(24px,3.4vw,32px); margin-bottom:16px; }
+  .cta-band p{ font-size:15px; color:var(--ink-soft); max-width:48ch; margin:0 auto 28px; }
+  .btn{ display:inline-flex; align-items:center; gap:8px; padding:14px 24px; border-radius:6px; font-weight:700; font-size:14px; text-decoration:none; background:var(--accent); color:#fff; }
+  .btn:hover{ opacity:0.9; }
+
+  footer{ padding:36px 0 56px; border-top:1px solid var(--rule); text-align:center; }
+  footer p{ font-size:12.5px; color:var(--ink-faint); max-width:60ch; margin:0 auto; line-height:1.6; }
+  footer a{ color:var(--ink-soft); text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <a class="wordmark" href="understanding-mcas.html">Understanding MCAS</a>
+    <a href="mcas-answers.html" style="font-size:13px; font-weight:700; color:var(--ink-faint); text-decoration:none;">Quick answers</a>
+    <a class="hdr-cta" href="index.html">See MastMate</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Mast cell activation syndrome</p>
+    <h1>What MCAS actually is, in plain terms</h1>
+    <p>Mast cells sit in your skin, gut, airways and blood vessels as part of your immune system, ready to release chemicals like histamine when they detect a real threat. In MCAS, they fire too often, too easily, or with too much force, releasing those chemicals without a clear trigger a normal immune system would need. The result is a pattern of symptoms across several parts of the body at once, often set off by things that shouldn't cause a reaction at all.</p>
+  </div>
+</section>
+
+<section class="body-section">
+  <div class="wrap">
+    <h2>Common symptoms, by system</h2>
+    <p>MCAS rarely shows up as one symptom in isolation. Most people describe a cluster that moves around the body, which is part of what makes it so hard to pin down.</p>
+    <div class="symptom-grid">
+      <div class="symptom-item"><h3>Skin</h3><p>Flushing, hives, itching, and swelling that comes and goes.</p></div>
+      <div class="symptom-item"><h3>Gut</h3><p>Cramping, bloating, diarrhoea or nausea, often after eating.</p></div>
+      <div class="symptom-item"><h3>Heart & blood pressure</h3><p>Racing heart, lightheadedness, or a sudden drop in blood pressure.</p></div>
+      <div class="symptom-item"><h3>Airways</h3><p>Nasal congestion, throat tightness, or wheezing.</p></div>
+      <div class="symptom-item"><h3>Neurological</h3><p>Brain fog, headache, or a sense of anxiety that arrives with the physical symptoms.</p></div>
+      <div class="symptom-item"><h3>Whole-body</h3><p>Fatigue, and in more severe reactions, anaphylaxis-like episodes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="body-section">
+  <div class="wrap">
+    <h2>Common triggers</h2>
+    <p>Triggers vary a lot from person to person, which is exactly why a generic list of "foods to avoid" rarely works on its own. Common categories include:</p>
+    <div class="trigger-list">
+      <span>Histamine-rich or histamine-releasing foods</span>
+      <span>Heat, cold, or sudden temperature change</span>
+      <span>Physical exertion</span>
+      <span>Stress, including good stress</span>
+      <span>Strong fragrances or chemical smells</span>
+      <span>Certain medications, including some NSAIDs</span>
+      <span>Hormonal shifts across the cycle</span>
+      <span>Poor or disrupted sleep</span>
+      <span>Infections or illness</span>
+    </div>
+  </div>
+</section>
+
+<section class="body-section">
+  <div class="wrap">
+    <h2>Why it's such a long road to diagnose</h2>
+    <p>Two things make MCAS especially hard to get confirmed. The first is timing: a reaction can lag its trigger by up to two days, so by the time symptoms appear, the actual cause is long forgotten and something eaten more recently gets blamed instead.</p>
+    <p>The second is that standard blood tests are often taken well after a reaction has settled, when markers like tryptase have already returned to a normal range. A normal result at the wrong moment doesn't mean nothing happened, it usually just means the test missed the window. This is exactly why the pattern over time, not one single test, is what specialists generally look for: recurring symptoms across more than one body system, alongside evidence that something helps when it's treated as a mast cell issue.</p>
+    <div class="callout">
+      <p>None of this is a substitute for a proper diagnostic workup. If this pattern sounds familiar, the most useful next step is usually a referral to an allergist or immunologist who has experience with mast cell conditions, and a symptom record detailed enough to bring to that appointment.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>If this sounds familiar</h2>
+    <p>MastMate was built around that exact problem, the two-day lag and the pattern doctors actually look for, so your own log can do the work a single test often can't.</p>
+    <a class="btn" href="index.html">See how MastMate works</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>This page is educational and general in nature. It isn't medical advice, a diagnosis, or a substitute for seeing a doctor. If you recognise this pattern in yourself, please talk to a GP, allergist, or immunologist.</p>
+  </div>
+</footer>
+
+</body>
+</html>
